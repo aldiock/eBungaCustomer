@@ -41,7 +41,7 @@ const MyOrderLists = ({route, navigation}) => {
           backEndData.getUserDetails().user.id
         }/${backEndData.getStoreItem().uidLogin}/_MyOrderList`,
       )
-      .once('value', res => {
+      .on('value', res => {
         if (res.val()) {
           const rawData = res.val();
           const orderItem = [];
@@ -120,7 +120,7 @@ const MyOrderLists = ({route, navigation}) => {
                 </>
               ))
             ) : (
-              <View style={{alignItems: 'center', justifyContent:'center'}}>
+              <View style={{alignItems: 'center', justifyContent: 'center'}}>
                 <Text>Anda belum memilih salah satu product</Text>
               </View>
             )}
@@ -151,6 +151,8 @@ const styles = StyleSheet.create({
   form: {
     height: hp('100%'),
     width: wp('100%'),
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   cardAction: {
     marginLeft: 208,

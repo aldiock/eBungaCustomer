@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 5,
     justifyContent: 'space-between',
     elevation: 5,
-    borderRadius: 10,
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
   },
 });

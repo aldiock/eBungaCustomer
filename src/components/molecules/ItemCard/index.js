@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   cardProduk: {
-    width: 320,
+    width: 328,
     height: 119,
     borderRadius: 8,
     alignItems: 'center',

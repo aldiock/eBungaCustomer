@@ -8,7 +8,7 @@ const ButtonGoogle = ({title, ...props}) => {
       <View style={styles.container}>
         <Text style={styles.text}>{title}</Text>
         <LogoGoogleNew
-          style={{marginLeft: 65, marginTop: -28, marginRight: 330}}
+          style={{marginLeft: 85, marginTop: -26, marginRight: 330}}
         />
       </View>
     </TouchableOpacity>
@@ -19,7 +19,7 @@ export default ButtonGoogle;
 
 const styles = StyleSheet.create({
   container: {
-    width: 324,
+    width: 352,
     height: 45,
     borderRadius: 10,
     backgroundColor: '#11A962',
@@ -30,5 +30,6 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 18,
     fontWeight: 'bold',
+    paddingLeft:10,
   },
 });

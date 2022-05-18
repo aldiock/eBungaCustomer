@@ -23,13 +23,13 @@ const ItemCardOrderLists = ({
             <Image style={styles.GambarItem} source={{uri: gambarItem}} />
           </View>
           <View style={styles.inCardItem}>
-            <View style={{paddingLeft:40}}>
-              <Text numberOfLines={1} style={styles.itemHeader}>{nama}</Text>
-              <Text style={styles.itemHeader}>Status : {status}</Text>
-              <Text style={{justifyContent: 'center', fontWeight: 'bold'}}>
-                Rp.{numberWithCommas(harga)}
-              </Text>
-            </View>
+            <Text numberOfLines={2} style={styles.itemHeader}>
+              {nama}
+            </Text>
+            <Text style={styles.itemHeader}>Status : {status}</Text>
+            <Text style={{justifyContent: 'center', fontWeight: 'bold'}}>
+              Rp.{numberWithCommas(harga)}
+            </Text>
           </View>
         </View>
       </TouchableOpacity>
@@ -47,8 +47,9 @@ const styles = StyleSheet.create({
   },
   inCardItem: {
     justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: -90,
+    marginTop: -85,
+    paddingLeft: 120,
+
   },
   containerGambar: {
     marginRight: 225,
@@ -56,7 +57,7 @@ const styles = StyleSheet.create({
   containerCard: {
     width: 332,
     height: 97,
-    alignItems: 'center',
+    paddingLeft: 10,
     backgroundColor: '#EDEDF3',
     borderRadius: 8,
   },

@@ -1,21 +1,13 @@
 import React, {useContext, useEffect, useState} from 'react';
-import {
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TouchableOpacity,
-} from 'react-native';
+import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
 import {showMessage} from 'react-native-flash-message';
-import {Gap, ItemCard, SearchBarDash, Loading, Card} from '../../components';
-import {IcoMapsToko} from '../../assets';
+import {
+  heightPercentageToDP as hp,
+  widthPercentageToDP as wp,
+} from 'react-native-responsive-screen';
+import {Card, Gap, ItemCard, Loading, SearchBarDash} from '../../components';
 import firebase from '../../config/firebase/index';
 import BackendDataContext from '../../contexts/backEndDataContext';
-import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
-} from 'react-native-responsive-screen';
 
 const ListItemToko = ({route, navigation, onPress, ...props}) => {
   const [dataItem, setDataItem] = useState([]);
@@ -130,16 +122,18 @@ const ListItemToko = ({route, navigation, onPress, ...props}) => {
           {newItemList ? (
             <ScrollView showsVerticalScrollIndicator={false}>
               {newItemList.map(item => (
-         
-                  <ItemCard
-                    key={item.id}
-                    gambarItem={item.photo}
-                    descItem={item.descProduct}
-                    priceItem={item.priceProduct}
-                    namaItem={item.productName}
-                    onPress={() => orderItem(item)}
-                  />
-      
+                <>
+                  <View style={{justifyContent:'center',alignItems:'center'}}>
+                    <ItemCard
+                      key={item.id}
+                      gambarItem={item.photo}
+                      descItem={item.descProduct}
+                      priceItem={item.priceProduct}
+                      namaItem={item.productName}
+                      onPress={() => orderItem(item)}
+                    />
+                  </View>
+                </>
               ))}
             </ScrollView>
           ) : (

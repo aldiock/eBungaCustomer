@@ -22,7 +22,7 @@ export default SearchBarDash;
 
 const styles = StyleSheet.create({
   input: {
-    width: 320,
+    width: 334,
     height:48,
     borderWidth: 1,
     borderRadius: 10,

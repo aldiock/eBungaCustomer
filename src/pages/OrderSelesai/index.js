@@ -1,12 +1,12 @@
 import React, {useContext, useEffect} from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
+import {
+  heightPercentageToDP as hp,
+  widthPercentageToDP as wp,
+} from 'react-native-responsive-screen';
 import {numberWithCommas} from '../../../utils/index';
 import {Button, Card, Gap} from '../../components';
 import BackendDataContext from '../../contexts/backEndDataContext';
-import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
-} from 'react-native-responsive-screen';
 
 const OrderSelesai = ({navigation, route, ...props}) => {
   const backEndData = useContext(BackendDataContext);
@@ -17,18 +17,13 @@ const OrderSelesai = ({navigation, route, ...props}) => {
   const photoProduct = route.params.dataSelesai.photo;
   const productName = route.params.dataSelesai.productName;
   const timeOrder = route.params.dataSelesai.timeOrder;
-  const splitTime = timeOrder.substring(0, 25);
+  const splitTime = timeOrder.substring(0, 21);
   const status = route.params.dataSelesai.status;
   const alamatLengkap = route.params.dataSelesai.specificAddress;
   const orderByID = route.params.dataSelesai.orderByID;
   const splitOrderID = orderByID.substring(0, 20);
 
-  useEffect(() => {
-    console.log('TEST', route);
-  }, []);
-
-  //function proses order
-  const prosesOrder = () => {};
+  useEffect(() => {}, []);
 
   return (
     <View style={styles.Container}>
@@ -37,37 +32,23 @@ const OrderSelesai = ({navigation, route, ...props}) => {
         <Text
           style={{
             fontFamily: 'Poppins-Bold',
-            fontSize: 14,
+            fontSize: 18,
           }}>
           {splitTime}
         </Text>
       </View>
       <View style={{justifyContent: 'center', alignItems: 'center'}}>
-        <Text style={{fontSize: 10, fontFamily: 'Poppins-Bold'}}>
+        <Text style={{fontSize: 12, fontFamily: 'Poppins-Bold'}}>
           Order ID :
         </Text>
-        <Text style={{fontSize: 10, fontFamily: 'Poppins-Bold'}}>
+        <Text style={{fontSize: 12, fontFamily: 'Poppins-Bold'}}>
           {splitOrderID}
         </Text>
       </View>
       <View style={styles.cardParent}>
-        <Gap height={10} />
-        <Card style={styles.cardHeader}>
-          <View style={styles.userHeader}>
-            <Image
-              style={styles.avatar}
-              source={{
-                uri:
-                  backEndData.getUserDetails().photo ||
-                  backEndData.getUserDetails().user.photo,
-              }}
-            />
-            <Text style={styles.orderBy}>{nama}</Text>
-            <Text style={styles.statusOrder}>{status}</Text>
-          </View>
-        </Card>
+        <Gap height={40} />
         <View style={{}}>
-          <Text style={{fontSize: 10, fontFamily: 'Poppins-Bold'}}>
+          <Text style={{fontSize: 14, fontFamily: 'Poppins-Bold'}}>
             Ringkasan Pesanan
           </Text>
         </View>
@@ -88,7 +69,7 @@ const OrderSelesai = ({navigation, route, ...props}) => {
           </View>
         </Card>
         <View style={{}}>
-          <Text style={{fontSize: 10, fontFamily: 'Poppins-Bold'}}>
+          <Text style={{fontSize: 14, fontFamily: 'Poppins-Bold'}}>
             Foto Produk Dikirim
           </Text>
         </View>
@@ -120,10 +101,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  userHeader:{
+  userHeader: {
     marginTop: -40,
-  },  
-  rincianHeader:{
+  },
+  rincianHeader: {
     marginTop: 30,
   },
   cardHeader: {
@@ -209,7 +190,7 @@ const styles = StyleSheet.create({
     padding: 5,
   },
   buttonStyles: {
-    width: 370,
+    width: 320,
     height: 45,
     alignSelf: 'center',
   },

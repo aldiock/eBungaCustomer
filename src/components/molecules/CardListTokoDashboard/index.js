@@ -38,7 +38,8 @@ export default CardListTokoDashboard;
 
 const styles = StyleSheet.create({
   mainContentCard: {
-    marginHorizontal: 40,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   inCardItem: {
     marginLeft: 100,

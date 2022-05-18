@@ -5,24 +5,24 @@ import {
   ScrollView,
   StyleSheet,
   Text,
-  View,
   TouchableOpacity,
+  View,
 } from 'react-native';
 import {showMessage} from 'react-native-flash-message';
+import {
+  heightPercentageToDP as hp,
+  widthPercentageToDP as wp,
+} from 'react-native-responsive-screen';
 import {CloseIco, EmptyOrder} from '../../assets';
 import {
+  ButtonConfirm,
   ButtonItem2,
   Gap,
   ItemCardRecentOrder,
   Loading,
-  ButtonConfirm,
 } from '../../components';
 import firebase from '../../config/firebase/index';
 import BackendDataContext from '../../contexts/backEndDataContext';
-import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
-} from 'react-native-responsive-screen';
 
 const RecentOrderPage = ({navigation, key}) => {
   const backEndData = useContext(BackendDataContext);
@@ -34,11 +34,12 @@ const RecentOrderPage = ({navigation, key}) => {
   const [dataOrderBarang, setDataOrderBarang] = useState({});
 
   useEffect(() => {
-    if (!dataHistoryPayment) {
-    } else {
+    const unsubscribe = navigation.addListener('focus', () => {
       loadHistoryPayment();
-    }
-  }, []);
+    });
+
+    return unsubscribe;
+  }, [navigation]);
 
   //PAYMENT GATEWAY
   const URL_MIDTRANS_STATUS = 'https://api.sandbox.midtrans.com/v2/';

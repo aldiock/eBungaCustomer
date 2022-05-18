@@ -7249,6 +7249,13 @@
   dependencies:
     "warn-once" "^0.1.0"
 
+"react-native-super-grid@^4.4.0":
+  "integrity" "sha512-0msesnKyrOuT0xtlmFzQMgbRLBKnQel/AgJWWh/4UZAnRtLgQufzuVvnuQnyFQQb0ioQa3GkfMwr2ayFn5BHoA=="
+  "resolved" "https://registry.npmjs.org/react-native-super-grid/-/react-native-super-grid-4.4.0.tgz"
+  "version" "4.4.0"
+  dependencies:
+    "prop-types" "^15.6.0"
+
 "react-native-svg-transformer@^0.14.3":
   "integrity" "sha512-agDGdMeeBAsWEgg/u7mjtR2Z3c8smGCLep/n3svwifut9dpswZCP+bSIrU8ekg6RNtxAJL+eGJbWjJ38vWxw6g=="
   "resolved" "https://registry.npmjs.org/react-native-svg-transformer/-/react-native-svg-transformer-0.14.3.tgz"
@@ -7290,7 +7297,7 @@
     "escape-string-regexp" "2.0.0"
     "invariant" "2.2.4"
 
-"react-native@*", "react-native@^0.65.1", "react-native@>= 0.51", "react-native@>=0.35", "react-native@>=0.42.0", "react-native@>=0.45.0", "react-native@>=0.50.0", "react-native@>=0.59", "react-native@>=0.60.0", "react-native@>=0.65.1":
+"react-native@*", "react-native@^0.65.1", "react-native@>= 0.51", "react-native@>=0.35", "react-native@>=0.42.0", "react-native@>=0.45.0", "react-native@>=0.50.0", "react-native@>=0.59", "react-native@>=0.59.0", "react-native@>=0.60.0", "react-native@>=0.65.1":
   "integrity" "sha512-0UOVSnlssweQZjuaUtzViCifE/4tXm8oRbxwakopc8GavPu9vLulde145GOw6QVYiOy4iL50f+2XXRdX9NmMeQ=="
   "resolved" "https://registry.npmjs.org/react-native/-/react-native-0.65.1.tgz"
   "version" "0.65.1"
